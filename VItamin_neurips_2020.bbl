@@ -1,0 +1,188 @@
+\begin{thebibliography}{10}
+
+\bibitem{aligo_noisecurves}
+Advanced {LIGO} sensitivity design curve.
+\newblock \url{https://dcc.ligo.org/LIGO-T1800044/public}.
+\newblock Accessed: 2019-06-01.
+
+\bibitem{gracedb_O3}
+Gracedb — gravitational-wave candidate event database (ligo/virgo o3 public
+  alerts).
+\newblock \url{https://gracedb.ligo.org/superevents/public/O3/}.
+\newblock Accessed: 2019-09-16.
+
+\bibitem{PhysRevX.6.041015}
+B.~P. Abbott et~al.
+\newblock Binary black hole mergers in the first advanced {LIGO} observing run.
+\newblock {\em Phys. Rev. X}, 6:041015, Oct 2016.
+
+\bibitem{PhysRevLett.119.161101}
+B.~P. Abbott et~al.
+\newblock Gw170817: Observation of gravitational waves from a binary neutron
+  star inspiral.
+\newblock {\em Phys. Rev. Lett.}, 119:161101, Oct 2017.
+
+\bibitem{2018LRR....21....3A}
+B.~P. Abbott et~al.
+\newblock {Prospects for observing and localizing gravitational-wave transients
+  with Advanced LIGO, Advanced Virgo and KAGRA}.
+\newblock {\em Living Reviews in Relativity}, 21(1):3, Apr 2018.
+
+\bibitem{2020ApJ...892L...3A}
+B.~P. Abbott et~al.
+\newblock {GW190425: Observation of a Compact Binary Coalescence with Total
+  Mass 3.4 M}.
+\newblock {\em Astrophysical Journal Letters}, 892(1):L3, Mar. 2020.
+
+\bibitem{1909.06296}
+Anonymous et~al.
+\newblock Bayesian parameter estimation using conditional variational
+  autoencoders for gravitational-wave astronomy, 2019.
+
+\bibitem{1811.02042}
+G.~Ashton, M.~Huebner, P.~D. Lasky, C.~Talbot, K.~Ackley, S.~Biscoveanu,
+  Q.~Chu, A.~Divarkala, P.~J. Easter, B.~Goncharov, F.~H. Vivanco, J.~Harms,
+  M.~E. Lower, G.~D. Meadors, D.~Melchor, E.~Payne, M.~D. Pitkin, J.~Powell,
+  N.~Sarin, R.~J.~E. Smith, and E.~Thrane.
+\newblock Bilby: A user-friendly bayesian inference library for
+  gravitational-wave astronomy.
+\newblock {\em Astrophysical Journal Supplement Series}, 2018.
+
+\bibitem{Coughlin_2017}
+M.~Coughlin, P.~Earle, J.~Harms, S.~Biscans, C.~Buchanan, E.~Coughlin,
+  F.~Donovan, J.~Fee, H.~Gabbard, M.~Guy, N.~Mukund, and M.~Perry.
+\newblock Limiting the effects of earthquakes on gravitational-wave
+  interferometers.
+\newblock {\em Classical and Quantum Gravity}, 34(4):044004, feb 2017.
+
+\bibitem{Cranmer201912789}
+K.~Cranmer, J.~Brehmer, and G.~Louppe.
+\newblock The frontier of simulation-based inference.
+\newblock {\em Proceedings of the National Academy of Sciences}, 2020.
+
+\bibitem{emcee}
+D.~{Foreman-Mackey}, D.~W. {Hogg}, D.~{Lang}, and J.~{Goodman}.
+\newblock emcee: The mcmc hammer.
+\newblock {\em PASP}, 125:306--312, 2013.
+
+\bibitem{PhysRevLett.120.141103}
+H.~Gabbard, M.~Williams, F.~Hayes, and C.~Messenger.
+\newblock Matching matched filtering with deep networks for gravitational-wave
+  astronomy.
+\newblock {\em Phys. Rev. Lett.}, 120:141103, Apr 2018.
+
+\bibitem{GebKilParHarSch}
+T.~Gebhard, N.~Kilbertus, G.~Parascandolo, I.~Harry, and B.~Sch{\"o}lkopf.
+\newblock Convwave: Searching for gravitational waves with fully convolutional
+  neural nets.
+\newblock In {\em Workshop on Deep Learning for Physical Sciences (DLPS) at the
+  31st Conference on Neural Information Processing Systems (NIPS)}, 2017.
+
+\bibitem{GEORGE201864}
+D.~George and E.~Huerta.
+\newblock Deep learning for real-time gravitational wave detection and
+  parameter estimation: Results with advanced ligo data.
+\newblock {\em Physics Letters B}, 778:64 -- 70, 2018.
+
+\bibitem{2012MNRAS.421..169G}
+P.~{Graff}, F.~{Feroz}, M.~P. {Hobson}, and A.~{Lasenby}.
+\newblock {BAMBI: blind accelerated multimodal Bayesian inference}.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  421(1):169--180, Mar. 2012.
+
+\bibitem{1809.10113}
+S.~Khan, K.~Chatziioannou, M.~Hannam, and F.~Ohme.
+\newblock Phenomenological model for the gravitational-wave signal from
+  precessing binary black holes with two-spin effects, 2018.
+
+\bibitem{2015PhRvD..91h4034L}
+T.~B. {Littenberg} and N.~J. {Cornish}.
+\newblock {Bayesian inference for spectral estimation of gravitational wave
+  detector noise}.
+\newblock {\em Physical Review D}, 91(8):084034, Apr 2015.
+
+\bibitem{1807.03653}
+A.~Nazabal, P.~M. Olmos, Z.~Ghahramani, and I.~Valera.
+\newblock Handling incomplete heterogeneous data using {VAEs}, 2018.
+
+\bibitem{1612.00005}
+A.~Nguyen, J.~Clune, Y.~Bengio, A.~Dosovitskiy, and J.~Yosinski.
+\newblock Plug and play generative networks: Conditional iterative generation
+  of images in latent space, 2016.
+
+\bibitem{1812.04405}
+A.~Pagnoni, K.~Liu, and S.~Li.
+\newblock Conditional variational autoencoder for neural machine translation,
+  2018.
+
+\bibitem{2009CQGra..26o5017S}
+A.~C. {Searle}, P.~J. {Sutton}, and M.~{Tinto}.
+\newblock {Bayesian detection of unmodeled bursts of gravitational waves}.
+\newblock {\em Classical and Quantum Gravity}, 26(15):155017, Aug 2009.
+
+\bibitem{2016PhRvD..93b4013S}
+L.~P. {Singer} and L.~R. {Price}.
+\newblock {Rapid Bayesian position reconstruction for gravitational-wave
+  transients}.
+\newblock {\em Physical Review D}, 93(2):024013, Jan 2016.
+
+\bibitem{skilling2006}
+J.~Skilling.
+\newblock Nested sampling for general bayesian computation.
+\newblock {\em Bayesian Anal.}, 1(4):833--859, 12 2006.
+
+\bibitem{NIPS2015_5775}
+K.~Sohn, H.~Lee, and X.~Yan.
+\newblock Learning structured output representation using deep conditional
+  generative models.
+\newblock In C.~Cortes, N.~D. Lawrence, D.~D. Lee, M.~Sugiyama, and R.~Garnett,
+  editors, {\em Advances in Neural Information Processing Systems 28}, pages
+  3483--3491. Curran Associates, Inc., 2015.
+
+\bibitem{dynesty}
+J.~S. Speagle.
+\newblock dynesty: A dynamic nested sampling package for estimating {B}ayesian
+  posteriors and evidences, 2019.
+
+\bibitem{1904.06264}
+F.~Tonolini, A.~Lyons, P.~Caramazza, D.~Faccio, and R.~Murray-Smith.
+\newblock Variational inference for computational imaging inverse problems,
+  2019.
+\newblock To appear in JMLR.
+
+\bibitem{cpnest}
+J.~Veitch, W.~D. Pozzo, C.~Messick, and M.~Pitkin.
+\newblock Cpnest.
+\newblock Jul 2017.
+
+\bibitem{1409.7215}
+J.~Veitch, V.~Raymond, B.~Farr, W.~M. Farr, P.~Graff, S.~Vitale, B.~Aylott,
+  K.~Blackburn, N.~Christensen, M.~Coughlin, W.~D. Pozzo, F.~Feroz, J.~Gair,
+  C.-J. Haster, V.~Kalogera, T.~Littenberg, I.~Mandel, R.~O'Shaughnessy,
+  M.~Pitkin, C.~Rodriguez, C.~Röver, T.~Sidery, R.~Smith, M.~V.~D. Sluys,
+  A.~Vecchio, W.~Vousden, and L.~Wade.
+\newblock Robust parameter estimation for compact binaries with ground-based
+  gravitational-wave observations using the lalinference software library.
+\newblock {\em Physical Review D}, 2014.
+
+\bibitem{ptemcee}
+W.~Vousden, W.~M. Farr, and I.~Mandel.
+\newblock Dynamic temperature selection for parallel-tempering in {Markov chain
+  Monte Carlo} simulations.
+\newblock 2015.
+
+\bibitem{1512.00570}
+X.~Yan, J.~Yang, K.~Sohn, and H.~Lee.
+\newblock Attribute2image: Conditional image generation from visual attributes,
+  2015.
+
+\bibitem{0264-9381-34-6-064003}
+M.~Zevin, S.~Coughlin, S.~Bahaadini, E.~Besler, N.~Rohani, S.~Allen, M.~Cabero,
+  K.~Crowston, A.~K. Katsaggelos, S.~L. Larson, T.~K. Lee, C.~Lintott, T.~B.
+  Littenberg, A.~Lundgren, C.~Østerlund, J.~R. Smith, L.~Trouille, and
+  V.~Kalogera.
+\newblock Gravity spy: integrating advanced ligo detector characterization,
+  machine learning, and citizen science.
+\newblock {\em Classical and Quantum Gravity}, 34(6):064003, 2017.
+
+\end{thebibliography}
