@@ -48,18 +48,6 @@ G.~Ashton, M.~Huebner, P.~D. Lasky, C.~Talbot, K.~Ackley, S.~Biscoveanu,
   gravitational-wave astronomy.
 \newblock {\em Astrophysical Journal Supplement Series}, 2018.
 
-\bibitem{Coughlin_2017}
-M.~Coughlin, P.~Earle, J.~Harms, S.~Biscans, C.~Buchanan, E.~Coughlin,
-  F.~Donovan, J.~Fee, H.~Gabbard, M.~Guy, N.~Mukund, and M.~Perry.
-\newblock Limiting the effects of earthquakes on gravitational-wave
-  interferometers.
-\newblock {\em Classical and Quantum Gravity}, 34(4):044004, feb 2017.
-
-\bibitem{Cranmer201912789}
-K.~Cranmer, J.~Brehmer, and G.~Louppe.
-\newblock The frontier of simulation-based inference.
-\newblock {\em Proceedings of the National Academy of Sciences}, 2020.
-
 \bibitem{emcee}
 D.~{Foreman-Mackey}, D.~W. {Hogg}, D.~{Lang}, and J.~{Goodman}.
 \newblock emcee: The mcmc hammer.
@@ -83,12 +71,6 @@ D.~George and E.~Huerta.
 \newblock Deep learning for real-time gravitational wave detection and
   parameter estimation: Results with advanced ligo data.
 \newblock {\em Physics Letters B}, 778:64 -- 70, 2018.
-
-\bibitem{2012MNRAS.421..169G}
-P.~{Graff}, F.~{Feroz}, M.~P. {Hobson}, and A.~{Lasenby}.
-\newblock {BAMBI: blind accelerated multimodal Bayesian inference}.
-\newblock {\em Monthly Notices of the Royal Astronomical Society},
-  421(1):169--180, Mar. 2012.
 
 \bibitem{1809.10113}
 S.~Khan, K.~Chatziioannou, M.~Hannam, and F.~Ohme.
@@ -175,14 +157,5 @@ W.~Vousden, W.~M. Farr, and I.~Mandel.
 X.~Yan, J.~Yang, K.~Sohn, and H.~Lee.
 \newblock Attribute2image: Conditional image generation from visual attributes,
   2015.
-
-\bibitem{0264-9381-34-6-064003}
-M.~Zevin, S.~Coughlin, S.~Bahaadini, E.~Besler, N.~Rohani, S.~Allen, M.~Cabero,
-  K.~Crowston, A.~K. Katsaggelos, S.~L. Larson, T.~K. Lee, C.~Lintott, T.~B.
-  Littenberg, A.~Lundgren, C.~Østerlund, J.~R. Smith, L.~Trouille, and
-  V.~Kalogera.
-\newblock Gravity spy: integrating advanced ligo detector characterization,
-  machine learning, and citizen science.
-\newblock {\em Classical and Quantum Gravity}, 34(6):064003, 2017.
 
 \end{thebibliography}

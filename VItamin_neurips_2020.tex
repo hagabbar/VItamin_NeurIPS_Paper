@@ -228,18 +228,18 @@ methods.
 %
 % Intro to machine learning section
 %
-Machine learning has featured prominently in many areas of \ac{GW} research
-over the last few years. These techniques have shown to be particularly
-promising in signal
-detection~\cite{GEORGE201864,PhysRevLett.120.141103,GebKilParHarSch}, glitch
-classification~\cite{0264-9381-34-6-064003}, earthquake
-prediction~\cite{Coughlin_2017}, and to augment existing Bayesian sampling
-methods~\cite{2012MNRAS.421..169G}. These methods, including the
-one presented in this paper, are known as ``likelihood-free'' approaches in
-which there is no requirement for explicit likelihood 
-evaluation~\cite{Cranmer201912789}, only the need
-to sample from the likelihood. Nor is it the case that pre-computed posterior
-distributions are required in the training procedure.
+%Machine learning has featured prominently in many areas of \ac{GW} research
+%over the last few years. These techniques have shown to be particularly
+%promising in signal
+%detection~\cite{GEORGE201864,PhysRevLett.120.141103,GebKilParHarSch}, glitch
+%classification~\cite{0264-9381-34-6-064003}, earthquake
+%prediction~\cite{Coughlin_2017}, and to augment existing Bayesian sampling
+%methods~\cite{2012MNRAS.421..169G}. These methods, including the
+%one presented in this paper, are known as ``likelihood-free'' approaches in
+%which there is no requirement for explicit likelihood 
+%evaluation~\cite{Cranmer201912789}, only the need
+%to sample from the likelihood. Nor is it the case that pre-computed posterior
+%distributions are required in the training procedure.
 
 %
 % Introduce CVAEs
@@ -263,57 +263,57 @@ from a network of \ac{GW} detectors.
 % Brief introduction to loss functions used in the neural networks
 %
 
-\section{Methods}
+%\section{Methods}
 
-The construction of a \ac{CVAE} begins with the definition of a quantity to be
-minimised (referred to as a cost function). In our case we use the cross
-entropy, defined as
+%The construction of a \ac{CVAE} begins with the definition of a quantity to be
+%minimised (referred to as a cost function). In our case we use the cross
+%entropy, defined as
 %
-\begin{align}\label{eq:cross_ent} 
-H(p,r) &= -\int dx\, p(x|y) \log r_{\theta}(x|y) 
-\end{align}
+%\begin{align}\label{eq:cross_ent} 
+%H(p,r) &= -\int dx\, p(x|y) \log r_{\theta}(x|y) 
+%\end{align}
 %
-between the true posterior $p(x|y)$ and $r_{\theta}(x|y)$, the parametric
-distribution that we will use neural networks to model and which we aim
-to be equal to the true posterior. The parametric model is
-constructed from a combination of 2 (encoder and decoder) neural networks
-$r_{\theta_1}(z|y)$ and $r_{\theta_2}(x|y,z)$ where
+%between the true posterior $p(x|y)$ and $r_{\theta}(x|y)$, the parametric
+%distribution that we will use neural networks to model and which we aim
+%to be equal to the true posterior. The parametric model is
+%constructed from a combination of 2 (encoder and decoder) neural networks
+%$r_{\theta_1}(z|y)$ and $r_{\theta_2}(x|y,z)$ where
 %
-\begin{align}\label{eq:latent_model}
-r_{\theta}(x|y) = \int dz\,r_{\theta_1}(z|y)r_{\theta_2}(x|y,z).
-\end{align}
+%\begin{align}\label{eq:latent_model}
+%r_{\theta}(x|y) = \int dz\,r_{\theta_1}(z|y)r_{\theta_2}(x|y,z).
+%\end{align}
 %
-In this case the $\theta$ subscripts represent sets of trainable neural network
-parameters and the variable $z$ represents locations within a \emph{latent
-space}. This latter object is typically a lower dimensional space within which
-an encoder can represent the input data, and via marginalisation allows the
-construction of a rich family of possible probability densities.
+%In this case the $\theta$ subscripts represent sets of trainable neural network
+%parameters and the variable $z$ represents locations within a \emph{latent
+%space}. This latter object is typically a lower dimensional space within which
+%an encoder can represent the input data, and via marginalisation allows the
+%construction of a rich family of possible probability densities.
 
-Starting from Eq.~\ref{eq:cross_ent} it is possible to derive a
-computable bound for the cross-entropy that is reliant on the
-$r_{\theta_1}$ and $r_{\theta_2}$ networks and a third ``recognition'' encoder
-network $q_{\phi}(z|x,y)$ governed by the trainable parameter-set $\phi$. The
-details of the derivation are described in the methods section and
-in~\cite{1904.06264} but equate to an optimisation of the \ac{ELBO}. The
-final form of the cross-entropy cost function is given by the bound
+%Starting from Eq.~\ref{eq:cross_ent} it is possible to derive a
+%computable bound for the cross-entropy that is reliant on the
+%$r_{\theta_1}$ and $r_{\theta_2}$ networks and a third ``recognition'' encoder
+%network $q_{\phi}(z|x,y)$ governed by the trainable parameter-set $\phi$. The
+%details of the derivation are described in the methods section and
+%in~\cite{1904.06264} but equate to an optimisation of the \ac{ELBO}. The
+%final form of the cross-entropy cost function is given by the bound
 
 %
-\begin{align}\label{eq:cost3} H \lesssim
-\frac{1}{N}\sum_{n=1}^{N_{\text{b}}}&\Big[\overbrace{-\log
-r_{\theta_{2}}(x_{n}|z_{n},y_{n})}^{L}\nonumber\\
-&+\overbrace{\text{KL}\left[q_{\phi}(z|x_{n},y_{n})||r_{\theta_{1}}(z|y_{n})\right]}^{\text{KL}}\Big].
-\end{align}
+%\begin{align}\label{eq:cost3} H \lesssim
+%\frac{1}{N}\sum_{n=1}^{N_{\text{b}}}&\Big[\overbrace{-\log
+%r_{\theta_{2}}(x_{n}|z_{n},y_{n})}^{L}\nonumber\\
+%&+\overbrace{\text{KL}\left[q_{\phi}(z|x_{n},y_{n})||r_{\theta_{1}}(z|y_{n})\right]}^{\text{KL}}\Big].
+%\end{align}
 %
 
-The cost function is composed of 2 terms, the ``reconstruction'' cost $L$ which
-is a measure of how well the decoder network $r_{\theta_2}$ predicts the true
-signal parameters $x$, and the \ac{KL}-divergence cost that measures the
-similarity between the distributions modelled by the $r_{\theta_1}$ and
-$q_{\phi}$ encoder networks. In practice, for each iteration of the training
-procedure, the integrations over $x,y$ and $z$ are approximated by a sum over a
-batch of $N_{\text{b}}$ draws from the user defined prior $p(x)$, the known
-likelihood $p(y|x)$, and the recognition function $q_{\phi}(z|,x,y)$. Details
-of the training procedure are further explained in \cite{1909.06296}.  
+%The cost function is composed of 2 terms, the ``reconstruction'' cost $L$ which
+%is a measure of how well the decoder network $r_{\theta_2}$ predicts the true
+%signal parameters $x$, and the \ac{KL}-divergence cost that measures the
+%similarity between the distributions modelled by the $r_{\theta_1}$ and
+%$q_{\phi}$ encoder networks. In practice, for each iteration of the training
+%procedure, the integrations over $x,y$ and $z$ are approximated by a sum over a
+%batch of $N_{\text{b}}$ draws from the user defined prior $p(x)$, the known
+%likelihood $p(y|x)$, and the recognition function $q_{\phi}(z|,x,y)$. Details
+%of the training procedure are further explained in \cite{1909.06296}.  
 
 %
 % brief mention of differences to a standard CVAE
@@ -472,25 +472,25 @@ dataset in Fig.~\ref{fig:corner_plot} where strong agreement between 2
 \texttt{Bilby} sampler results as benchmark cases, different existing samplers
 do not perfectly agree with each other. For each of our 256 test cases we see
 equivalent levels of disparity between pairs of benchmark samplers \emph{and}
-between any benchmark sampler and our \ac{CVAE} results.  
+between any benchmark sampler and our \ac{CVAE} results.  In \cite{1909.06296} we also 
+show the results of 2 statistical tests (the \ac{PP} plot test and
+\ac{KL}-divergence tests) performed on the entire test dataset and between all
+samplers (\texttt{Dynesty}, \texttt{ptemcee}, \texttt{CPNest}, \texttt{emcee}, and \texttt{VItamin}).
 
 %
 % mention the p-p plot and KL distribution results
 %
-In \cite{1909.06296} we also 
-show the results of 2 statistical tests (the \ac{PP} plot test and
-\ac{KL}-divergence tests) performed on the entire test dataset and between all
-samplers (\texttt{Dynesty}, \texttt{ptemcee}, \texttt{CPNest}, \texttt{emcee}, and \texttt{VItamin}). In
-both tests the quality of the \texttt{VItamin} results are indistinguishable from the
-benchmark samplers. The \ac{PP} plot results specifically indicate that the
-Bayesian one-dimensional marginalised posteriors from each approach are
-self-consistent from a frequentist perspective (e.g., the true values lie
-within the $X\%$ confidence interval for $X\%$ of the test cases). The second
-test computes the distribution of \ac{KL}-divergences between posteriors
-conditioned on the same test data $y$ from pairs of samplers. In all cases this
-measure of ``distribution similarity'' between \texttt{VItamin} and any particular
-benchmark sampler is entirely consistent with the distribution between that
-benchmark sampler and any other.   
+%In
+%both tests the quality of the \texttt{VItamin} results are indistinguishable from the
+%benchmark samplers. The \ac{PP} plot results specifically indicate that the
+%Bayesian one-dimensional marginalised posteriors from each approach are
+%self-consistent from a frequentist perspective (e.g., the true values lie
+%within the $X\%$ confidence interval for $X\%$ of the test cases). The second
+%test computes the distribution of \ac{KL}-divergences between posteriors
+%conditioned on the same test data $y$ from pairs of samplers. In all cases this
+%measure of ``distribution similarity'' between \texttt{VItamin} and any particular
+%benchmark sampler is entirely consistent with the distribution between that
+%benchmark sampler and any other.   
 
 %
 % discuss the speed of the analysis
@@ -574,14 +574,14 @@ inference techniques.
 %
 \section{Conclusions}
 
-In this paper we have demonstrated that we are able to reproduce, to a high
-degree of accuracy, Bayesian posterior probability distributions generated
-through machine learning. This is accomplished using a \ac{CVAE} trained on
-simulated \ac{GW} signals and does not require the input of precomputed
-posterior estimates. We have demonstrated that our neural network model, which
-when trained, can reproduce complete and accurate posterior estimates in
-a fraction of a second, achieves the same quality of results as the
-trusted benchmark analyses used within the LIGO-Virgo Collaboration.
+%In this paper we have demonstrated that we are able to reproduce, to a high
+%degree of accuracy, Bayesian posterior probability distributions generated
+%through machine learning. This is accomplished using a \ac{CVAE} trained on
+%simulated \ac{GW} signals and does not require the input of precomputed
+%posterior estimates. We have demonstrated that our neural network model, which
+%when trained, can reproduce complete and accurate posterior estimates in
+%a fraction of a second, achieves the same quality of results as the
+%trusted benchmark analyses used within the LIGO-Virgo Collaboration.
 
 %
 % CBC implications and why this is a game-changer - speed for EM followup
@@ -652,23 +652,32 @@ estimation.
 
 \section*{Broader Impact}
 
+
+
 %
 % future work, current limitations and prospects
 %
-%For \ac{BBH} signals, \ac{GW} data is usually sampled at $1$---$4$ kHz
-%dependent upon the mass of binary. We have chosen to use the noticeably low
-%sampling rate of 256Hz in order to decrease the computational time
-%required to develop our approach and the computational burden of computing our
-%256 benchmark analyses for each of 4 benchmark samplers. We have been able to
-%extend our analysis to $1$ kHz sampling frequencies at the cost of an $\sim1.5$
-%fold increase in training time and a similar increase on the \ac{GPU} memory
-%requirement. We note that with the exception of requiring one-dimensional
-%convolutional layers and an increase in the amount of training data to
-%efficiently deal with a multi-detector analysis, the network complexity has not
-%increased with the dimensionality of the physical parameter space nor with the
-%sampling rate of the input data. We therefore do not anticipate that extending
-%the parameter space to lower masses and including component spin parameters
-%will be problematic.
+Our work may be applied to a wide range of applications within the 
+\ac{GW} community (population studies, rapid \ac{EM} partner 
+astronomer \ac{GW} signal sky localisation alerts, etc.). In terms of  
+reliability, our \ac{CVAE} approach is currently just as 
+reliant on accurate noise and signal models as existing techniques. 
+However, there is the potential to step away from this reliance in the 
+future and to make our results more robust against these important 
+effects than is possible with existing techniques.
+
+In reality, \ac{GW} detectors are affected by non-Gaussian noise artefacts and
+time-dependent variation in the detector noise \ac{PSD}. Existing methods
+incorporate a parameterised \ac{PSD} estimation into their
+inference~\cite{2015PhRvD..91h4034L}. To account for these and to exploit the
+``likelihood-free'' nature of the \ac{CVAE} approach, we could re-train our
+network at regular intervals using samples of real detector noise (preferably
+recent examples to best reflect the state of the detectors). In this case
+we could also apply transfer learning to speed up each training instance based
+on the previously trained network state.  Alternatively, since the \ac{PSD} is
+an estimated quantity, we could marginalise over its uncertainty by providing
+training data whitened by samples drawn from a distribution of possible
+\acp{PSD}.
 
 \begin{ack}
 %
