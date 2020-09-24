@@ -178,8 +178,11 @@ template based matched-filtering, a process recently replicated using machine
 learning techniques~\cite{GEORGE201864,PhysRevLett.120.141103,GebKilParHarSch}.
 Once a \ac{GW} has been identified through this process, Bayesian inference,
 known to be the optimal approach~\cite{2009CQGra..26o5017S}, is used to extract
-information about the source parameters of the detected \ac{GW} signal.
-
+information about the source parameters of the detected \ac{GW} signal. Although 
+optimal, Bayesian inference is computationally costly. Extracting parameters 
+such as the sky position in a timely manner is key to maximising the amount of 
+lead time given to other \ac{EM} partners in order to direct their telescopes to the 
+optimal location in the sky with little loss in observational fidelity.
 %
 % Set up parameter estimation problem
 %
@@ -592,8 +595,11 @@ using \ac{BBH} signals but with additional work to increase sample rate
 and signal duration, the method can also be extended for application to
 signals from \ac{BNS} mergers (e.g., GW170817~\cite{PhysRevLett.119.161101},
 and GW190425~\cite{2020ApJ...892L...3A}) and \ac{NSBH} systems where
-improved low-latency alerts will be especially pertinent. By using our
-approach, parameter estimation speed will no longer be limiting
+improved low-latency alerts will be especially pertinent. Current Bayesian 
+analyses limit the amount of lead time we are able to give other 
+\ac{EM} partners in order to slew their telescopes to the 
+optimal location in the sky. By using our
+approach, parameter estimation speed will no longer be a limiting
 factor\footnote{A complete low-latency pipeline includes a number of
 steps. The process of \ac{GW} data acquisition is followed by the transfer of
 data. There is then the corresponding candidate event identification,
@@ -623,28 +629,7 @@ signals and to analyses of \ac{GW} data beyond that of ground based
 experiments. Given the abundant benefits of this method, we hope that a variant
 of this of approach will form the basis for future \ac{GW} parameter
 estimation.
- 
 
-%
-% Non Gaussian noise and the final statement
-%
-%In reality, \ac{GW} detectors are affected by non-Gaussian noise artefacts and
-%time-dependent variation in the detector noise \ac{PSD}. Existing methods
-%incorporate a parameterised \ac{PSD} estimation into their
-%inference~\cite{2015PhRvD..91h4034L}. To account for these and to exploit the
-%``likelihood-free'' nature of the \ac{CVAE} approach, we could re-train our
-%network at regular intervals using samples of real detector noise (preferably
-%recent examples to best reflect the state of the detectors). In this case
-%we could also apply transfer learning to speed up each training instance based
-%on the previously trained network state.  Alternatively, since the \ac{PSD} is
-%an estimated quantity, we could marginalise over its uncertainty by providing
-%training data whitened by samples drawn from a distribution of possible
-%\acp{PSD}. Our work can naturally be extended to include the full range of
-%\ac{CBC} signal types but also to any and all other parameterised \ac{GW}
-%signals and to analyses of \ac{GW} data beyond that of ground based
-%experiments. Given the abundant benefits of this method, we hope that a variant
-%of this of approach will form the basis for future \ac{GW} parameter
-%estimation.
 
 %
 % word count ~620
@@ -666,7 +651,7 @@ However, there is the potential to step away from this reliance in the
 future and to make our results more robust against these important 
 effects than is possible with existing techniques.
 
-In reality, \ac{GW} detectors are affected by non-Gaussian noise artefacts and
+In reality, \ac{GW} detectors are also affected by non-Gaussian noise artefacts and
 time-dependent variation in the detector noise \ac{PSD}. Existing methods
 incorporate a parameterised \ac{PSD} estimation into their
 inference~\cite{2015PhRvD..91h4034L}. To account for these and to exploit the
@@ -678,6 +663,13 @@ on the previously trained network state.  Alternatively, since the \ac{PSD} is
 an estimated quantity, we could marginalise over its uncertainty by providing
 training data whitened by samples drawn from a distribution of possible
 \acp{PSD}.
+
+Outside of gravitational wave astronomy, our approach can potentially 
+be applied to a wide range of other areas where rapid predictions and 
+decisions are needed. This can improve classifiers in healthcare, 
+but can also improve apps which may have positive or negative 
+consequences (military or privacy related)~\cite{1904.06264,NIPS2015_5775,
+1512.00570,1612.00005,1807.03653}.
 
 \begin{ack}
 %
