@@ -34,11 +34,6 @@ B.~P. Abbott et~al.
   Mass 3.4 M}.
 \newblock {\em Astrophysical Journal Letters}, 892(1):L3, Mar. 2020.
 
-\bibitem{1909.06296}
-Anonymous et~al.
-\newblock Bayesian parameter estimation using conditional variational
-  autoencoders for gravitational-wave astronomy, 2019.
-
 \bibitem{1811.02042}
 G.~Ashton, M.~Huebner, P.~D. Lasky, C.~Talbot, K.~Ackley, S.~Biscoveanu,
   Q.~Chu, A.~Divarkala, P.~J. Easter, B.~Goncharov, F.~H. Vivanco, J.~Harms,
@@ -52,6 +47,11 @@ G.~Ashton, M.~Huebner, P.~D. Lasky, C.~Talbot, K.~Ackley, S.~Biscoveanu,
 D.~{Foreman-Mackey}, D.~W. {Hogg}, D.~{Lang}, and J.~{Goodman}.
 \newblock emcee: The mcmc hammer.
 \newblock {\em PASP}, 125:306--312, 2013.
+
+\bibitem{1909.06296}
+H.~Gabbard, C.~Messenger, I.~S. Heng, F.~Tonolini, and R.~Murray-Smith.
+\newblock Bayesian parameter estimation using conditional variational
+  autoencoders for gravitational-wave astronomy, 2019.
 
 \bibitem{PhysRevLett.120.141103}
 H.~Gabbard, M.~Williams, F.~Hayes, and C.~Messenger.

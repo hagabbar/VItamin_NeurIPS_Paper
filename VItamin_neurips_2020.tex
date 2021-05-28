@@ -5,17 +5,17 @@
 % before loading neurips_2020
 
 % ready for submission
-% \usepackage{neurips_2020}
+%\usepackage{neurips_2020_ml4ps}
 
 % to compile a preprint version, e.g., for submission to arXiv, add add the
 % [preprint] option:
 %     \usepackage[preprint]{neurips_2020}
 
 % to compile a camera-ready version, add the [final] option, e.g.:
-%     \usepackage[final]{neurips_2020}
+     \usepackage[final]{neurips_2020_ml4ps}
 	
 % to avoid loading the natbib package, add option nonatbib:
-     \usepackage[nonatbib]{neurips_2020}
+ %    \usepackage[nonatbib]{neurips_2020}
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
@@ -268,55 +268,55 @@ from a network of \ac{GW} detectors.
 
 %\section{Methods}
 
-%The construction of a \ac{CVAE} begins with the definition of a quantity to be
-%minimised (referred to as a cost function). In our case we use the cross
-%entropy, defined as
-%
-%\begin{align}\label{eq:cross_ent} 
-%H(p,r) &= -\int dx\, p(x|y) \log r_{\theta}(x|y) 
-%\end{align}
-%
-%between the true posterior $p(x|y)$ and $r_{\theta}(x|y)$, the parametric
-%distribution that we will use neural networks to model and which we aim
-%to be equal to the true posterior. The parametric model is
-%constructed from a combination of 2 (encoder and decoder) neural networks
-%$r_{\theta_1}(z|y)$ and $r_{\theta_2}(x|y,z)$ where
-%
-%\begin{align}\label{eq:latent_model}
-%r_{\theta}(x|y) = \int dz\,r_{\theta_1}(z|y)r_{\theta_2}(x|y,z).
-%\end{align}
-%
-%In this case the $\theta$ subscripts represent sets of trainable neural network
-%parameters and the variable $z$ represents locations within a \emph{latent
-%space}. This latter object is typically a lower dimensional space within which
-%an encoder can represent the input data, and via marginalisation allows the
-%construction of a rich family of possible probability densities.
+The construction of a \ac{CVAE} begins with the definition of a quantity to be
+minimised (referred to as a cost function). In our case we use the cross
+entropy, defined as
 
-%Starting from Eq.~\ref{eq:cross_ent} it is possible to derive a
-%computable bound for the cross-entropy that is reliant on the
-%$r_{\theta_1}$ and $r_{\theta_2}$ networks and a third ``recognition'' encoder
-%network $q_{\phi}(z|x,y)$ governed by the trainable parameter-set $\phi$. The
-%details of the derivation are described in the methods section and
-%in~\cite{1904.06264} but equate to an optimisation of the \ac{ELBO}. The
-%final form of the cross-entropy cost function is given by the bound
+\begin{align}\label{eq:cross_ent} 
+H(p,r) &= -\int dx\, p(x|y) \log r_{\theta}(x|y) 
+\end{align}
 
-%
-%\begin{align}\label{eq:cost3} H \lesssim
-%\frac{1}{N}\sum_{n=1}^{N_{\text{b}}}&\Big[\overbrace{-\log
-%r_{\theta_{2}}(x_{n}|z_{n},y_{n})}^{L}\nonumber\\
-%&+\overbrace{\text{KL}\left[q_{\phi}(z|x_{n},y_{n})||r_{\theta_{1}}(z|y_{n})\right]}^{\text{KL}}\Big].
-%\end{align}
-%
+between the true posterior $p(x|y)$ and $r_{\theta}(x|y)$, the parametric
+distribution that we will use neural networks to model and which we aim
+to be equal to the true posterior. The parametric model is
+constructed from a combination of 2 (encoder and decoder) neural networks
+$r_{\theta_1}(z|y)$ and $r_{\theta_2}(x|y,z)$ where
 
-%The cost function is composed of 2 terms, the ``reconstruction'' cost $L$ which
-%is a measure of how well the decoder network $r_{\theta_2}$ predicts the true
-%signal parameters $x$, and the \ac{KL}-divergence cost that measures the
-%similarity between the distributions modelled by the $r_{\theta_1}$ and
-%$q_{\phi}$ encoder networks. In practice, for each iteration of the training
-%procedure, the integrations over $x,y$ and $z$ are approximated by a sum over a
-%batch of $N_{\text{b}}$ draws from the user defined prior $p(x)$, the known
-%likelihood $p(y|x)$, and the recognition function $q_{\phi}(z|,x,y)$. Details
-%of the training procedure are further explained in \cite{1909.06296}.  
+\begin{align}\label{eq:latent_model}
+r_{\theta}(x|y) = \int dz\,r_{\theta_1}(z|y)r_{\theta_2}(x|y,z).
+\end{align}
+
+In this case the $\theta$ subscripts represent sets of trainable neural network
+parameters and the variable $z$ represents locations within a \emph{latent
+space}. This latter object is typically a lower dimensional space within which
+an encoder can represent the input data, and via marginalisation allows the
+construction of a rich family of possible probability densities.
+
+Starting from Eq.~\ref{eq:cross_ent} it is possible to derive a
+computable bound for the cross-entropy that is reliant on the
+$r_{\theta_1}$ and $r_{\theta_2}$ networks and a third ``recognition'' encoder
+network $q_{\phi}(z|x,y)$ governed by the trainable parameter-set $\phi$. The
+details of the derivation are described in~\cite{1904.06264,1909.06296} but equate to an 
+optimisation of the \ac{ELBO}. The
+final form of the cross-entropy cost function is given by the bound
+
+
+\begin{align}\label{eq:cost3} H \lesssim
+\frac{1}{N}\sum_{n=1}^{N_{\text{b}}}&\Big[\overbrace{-\log
+r_{\theta_{2}}(x_{n}|z_{n},y_{n})}^{L}\nonumber\\
+&+\overbrace{\text{KL}\left[q_{\phi}(z|x_{n},y_{n})||r_{\theta_{1}}(z|y_{n})\right]}^{\text{KL}}\Big].
+\end{align}
+
+
+The cost function is composed of 2 terms, the ``reconstruction'' cost $L$ which
+is a measure of how well the decoder network $r_{\theta_2}$ predicts the true
+signal parameters $x$, and the \ac{KL}-divergence cost that measures the
+similarity between the distributions modelled by the $r_{\theta_1}$ and
+$q_{\phi}$ encoder networks. In practice, for each iteration of the training
+procedure, the integrations over $x,y$ and $z$ are approximated by a sum over a
+batch of $N_{\text{b}}$ draws from the user defined prior $p(x)$, the known
+likelihood $p(y|x)$, and the recognition function $q_{\phi}(z|,x,y)$. Details
+of the training procedure are further explained in \cite{1909.06296}.  
 
 %
 % brief mention of differences to a standard CVAE
@@ -441,7 +441,7 @@ training.
 % Corner plot results
 %
 \begin{figure*}
-    \includegraphics[width=\textwidth]{corner_testcase0.png}
+    \includegraphics[width=\textwidth]{images/corner_testcase0.png}
     %\includegraphics[scale=0.3]{corner_testcase0.png}
     \caption{\label{fig:corner_plot} Corner plot showing one and two-dimensional
 marginalised posterior distributions on the \ac{GW} parameters for one
@@ -577,14 +577,14 @@ inference techniques.
 %
 \section{Conclusions}
 
-%In this paper we have demonstrated that we are able to reproduce, to a high
-%degree of accuracy, Bayesian posterior probability distributions generated
-%through machine learning. This is accomplished using a \ac{CVAE} trained on
-%simulated \ac{GW} signals and does not require the input of precomputed
-%posterior estimates. We have demonstrated that our neural network model, which
-%when trained, can reproduce complete and accurate posterior estimates in
-%a fraction of a second, achieves the same quality of results as the
-%trusted benchmark analyses used within the LIGO-Virgo Collaboration.
+In this extended abstract we have demonstrated that we are able to reproduce, to a high
+degree of accuracy, Bayesian posterior probability distributions generated
+through machine learning. This is accomplished using a \ac{CVAE} trained on
+simulated \ac{GW} signals and does not require the input of precomputed
+posterior estimates. We have demonstrated that our neural network model, which
+when trained, can reproduce complete and accurate posterior estimates in
+a fraction of a second, achieves the same quality of results as the
+trusted benchmark analyses used within the LIGO-Virgo Collaboration.
 
 %
 % CBC implications and why this is a game-changer - speed for EM followup
